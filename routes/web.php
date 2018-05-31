@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/', 'ProjectController@home')->name('home');
+
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
@@ -19,4 +21,3 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/project/{project}', 'ProjectController@show')->name('project.show');
-Route::get('/', 'ProjectController@home')->name('home');
