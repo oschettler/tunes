@@ -22,8 +22,4 @@ class Project extends Model
             ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
     }
-
-    static function saving(function ($project) {
-
-    });
 }
