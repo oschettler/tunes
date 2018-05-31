@@ -69,7 +69,7 @@ class ProjectController extends Controller
      */
     public function store(CreateProjectRequest $request)
     {
-        list($page, $response) = $this->crud->store($request);
+        list($project, $response) = $this->crud->store($request);
         return $response;
     }
 
@@ -79,8 +79,12 @@ class ProjectController extends Controller
      * @param  \App\Project  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Request $request, Project $project)
     {
+        if ($request->route()->getName() != 'home' && $project->is_startpage) {
+            return redirect()->route('home');
+        }
+
         return view('project.show', ['entity' => $project]);
     }
 

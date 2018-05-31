@@ -1,12 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.project')
 
 @section('content')
-    <div class="container">
-        <div class="float-right">
-            <a href="{{ route('project.edit', ['project' => $entity]) }}" class="btn btn-default">Edit</a>
-        </div>
-        {!! $entity->markup !!}
-    </div>
+    <a style="float:right;margin-left:4px" href="{{ route('project.edit', ['project' => $entity]) }}" class="btn btn-default">Edit</a>
+    {!! $entity->markup !!}
 @endsection
 
 @push('styles')
