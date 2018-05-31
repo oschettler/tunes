@@ -6,6 +6,6 @@ class ProjectObserver
 {
     public function saving($project)
     {
-        Project::update('is_startpage', false);
+        Project::all()->update('is_startpage', false);
     }
 }
