@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('project', 'ProjectController')
-        ->except('show');
+        ->except('show', 'home');
 });
 
 Route::get('/project/{project}', 'ProjectController@show')->name('project.show');
