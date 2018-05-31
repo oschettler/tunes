@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('page', 'PageController')
+        ->except('show');
+});
+
+Route::get('/{page}', 'PageController@show')->name('page.show');
+Route::get('/', 'PageController@home')->name('home');
