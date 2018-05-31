@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Page;
+use App\Http\Requests\CreateProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
+use App\Project;
 use Illuminate\Http\Request;
 use Knowfox\Crud\Services\Crud;
 
-class PageController extends Controller
+class ProjectController extends Controller
 {
     protected $crud;
 
@@ -14,7 +16,7 @@ class PageController extends Controller
     {
         parent::__construct();
         $this->crud = $crud;
-        $crud->setup('tunes.page');
+        $crud->setup('tunes.project');
     }
 
     /**
@@ -24,19 +26,19 @@ class PageController extends Controller
      */
     public function home()
     {
-        $page = Page::where('is_startpage', true)->first();
+        $project = Project::where('is_startpage', true)->first();
 
-        if (!$page) {
-            if (Page::count() == 0) {
-                return redirect()->route('page.create')
-                    ->with('error', 'Create a page and mark it as startpage');
+        if (!$project) {
+            if (Project::count() == 0) {
+                return redirect()->route('project.create')
+                    ->with('error', 'Create a project and mark it as startpage');
             }
             else {
-                return redirect()->route('page.index')
-                    ->with('error', 'Select a page and mark it as startpage');
+                return redirect()->route('project.index')
+                    ->with('error', 'Select a project and mark it as startpage');
             }
         }
-        return view('page.show', ['page' => $page]);
+        return view('project.show', ['entity' => $project]);
     }
 
     /**
@@ -65,7 +67,7 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProjectRequest $request)
     {
         list($page, $response) = $this->crud->store($request);
         return $response;
@@ -74,44 +76,44 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Page  $page
+     * @param  \App\Project  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show(Project $project)
     {
-        //
+        return view('project.show', ['entity' => $project]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Page  $page
+     * @param  \App\Project  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit(Project $project)
     {
-        //
+        return $this->crud->edit($project);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Page  $page
+     * @param  \App\Project  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        return $this->crud->update($request, $project);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Page  $page
+     * @param  \App\Project  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy(Project $project)
     {
         //
     }

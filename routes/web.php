@@ -14,9 +14,9 @@
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('page', 'PageController')
+    Route::resource('project', 'ProjectController')
         ->except('show');
 });
 
-Route::get('/{page}', 'PageController@show')->name('page.show');
-Route::get('/', 'PageController@home')->name('home');
+Route::get('/project/{project}', 'ProjectController@show')->name('project.show');
+Route::get('/', 'ProjectController@home')->name('home');

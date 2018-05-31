@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
-class UpdatePageRequest extends FormRequest
+class CreateProjectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +14,7 @@ class UpdatePageRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -25,6 +26,7 @@ class UpdatePageRequest extends FormRequest
     {
         return [
             'title' => 'required',
+            'markup' => 'required',
         ];
     }
 }

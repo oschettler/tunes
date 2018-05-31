@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Page extends Model
+class Project extends Model
 {
     use HasSlug;
     protected $fillable = ['title', 'is_startpage', 'is_public', 'description', 'markup', 'style', 'script'];
@@ -22,4 +22,8 @@ class Page extends Model
             ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
     }
+
+    static function saving(function ($project) {
+
+    });
 }
