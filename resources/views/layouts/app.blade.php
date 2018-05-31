@@ -37,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
-                            <li><a class="nav-link" href="{{ route('project.index') }}">Projects</a></li>
+                            <li><a class="nav-link" href="{{ route('project.index') }}">@lang('Projects')</a></li>
                         @endauth
                     </ul>
 

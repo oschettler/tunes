@@ -39,7 +39,7 @@ return [
                 'rows' => 10,
             ],
             'markup' => [
-                'label' => 'HTML',
+                'label' => 'Markup',
                 'type' => 'textarea',
                 'rows' => 10,
             ]
