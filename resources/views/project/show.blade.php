@@ -1,7 +1,9 @@
 @extends('layouts.project')
 
 @section('content')
-    <a style="float:right;margin-left:4px" href="{{ route('project.edit', ['project' => $entity]) }}" class="btn btn-default">Edit</a>
+    @auth
+        <a style="float:right;margin-left:4px" href="{{ route('project.edit', ['project' => $entity]) }}" class="btn btn-default">Edit</a>
+    @endauth
     {!! $entity->markup !!}
 @endsection
 
