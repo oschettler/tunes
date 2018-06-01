@@ -5,3 +5,12 @@ This repository provides an editor similar to the popular
 to the markup as well as stylsheet and scripts.
 
 Please see the file LICENSE.md for information about the open source license used.
+
+Here are some screenshots of the editor:
+
+![Page list](public/img/screen-list.png)
+
+![Page editor](public/img/screen-editor.png)
+
+![Page birthday card](public/img/screen-card.png)
+Taken from https://projects.raspberrypi.org/en/projects/happy-birthday
