@@ -9,6 +9,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 window.Dropzone = require('dropzone');
+window.CodeMirror = require('codemirror');
+window.CodeMirror = require('codemirror');
+require('codemirror/mode/css/css');
+require('codemirror/mode/javascript/javascript');
+require('codemirror/mode/htmlmixed/htmlmixed');
 
 Dropzone.options.dropzone = {
     previewsContainer: '.dropzone-previews',

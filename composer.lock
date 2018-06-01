@@ -594,12 +594,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/knowfox/crud.git",
-                "reference": "854c9cef8403bc4510902649dcf981cb08e90a76"
+                "reference": "da2a9c55b7dc5f3d931c034de7d670d3d733b06c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/knowfox/crud/zipball/854c9cef8403bc4510902649dcf981cb08e90a76",
-                "reference": "854c9cef8403bc4510902649dcf981cb08e90a76",
+                "url": "https://api.github.com/repos/knowfox/crud/zipball/da2a9c55b7dc5f3d931c034de7d670d3d733b06c",
+                "reference": "da2a9c55b7dc5f3d931c034de7d670d3d733b06c",
                 "shasum": ""
             },
             "require": {
@@ -629,7 +629,7 @@
                 }
             ],
             "description": "A CRUD generator for Laravel",
-            "time": "2018-05-31 17:25:27"
+            "time": "2018-06-01 20:11:58"
         },
         {
             "name": "laravel/framework",
