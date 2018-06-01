@@ -9,6 +9,7 @@
 
 @push('styles')
     <style type="text/css">
+        body { margin: 0; }
         {!! $entity->style !!}
     </style>
 @endpush
