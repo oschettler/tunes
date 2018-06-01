@@ -2,7 +2,7 @@
 
 @section('content')
     @auth
-        <a style="float:right;margin-left:4px" href="{{ route('project.edit', ['project' => $entity]) }}" class="btn btn-default">Edit</a>
+        <a style="position:absolute;z-index:1;top:10px;right:10px;" href="{{ route('project.edit', ['project' => $entity]) }}" class="btn btn-default">Edit</a>
     @endauth
     {!! $entity->markup !!}
 @endsection
