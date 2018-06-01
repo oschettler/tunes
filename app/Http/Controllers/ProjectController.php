@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Http\Resources\ImageResource;
 use App\Project;
 use Illuminate\Http\Request;
 use Knowfox\Crud\Services\Crud;
@@ -119,6 +120,11 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        return $this->crud->destroy($project);
+    }
+
+    public function images(Project $project)
+    {
+        return ImageResource::collection($project->getMedia('images'));
     }
 }

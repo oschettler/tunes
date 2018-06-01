@@ -9,6 +9,9 @@ return [
         'entity_name' => 'project',
         'order_by' => 'updated_at|desc',
         'show' => true,
+        'has_file' => true,
+        'multiple_files' => true,
+        'deletes' => true,
 
         'columns' => [
             'title' => 'Title',

@@ -18,6 +18,10 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('project', 'ProjectController')
         ->except('show', 'home');
+
+    Route::get('project/{project}/images', 'ProjectController@images');
+
+    Route::post('media/{media}/delete', 'MediaController@delete');
 });
 
 Route::get('/project/{project}', 'ProjectController@show')->name('project.show');

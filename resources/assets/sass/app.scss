@@ -8,7 +8,19 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import "~dropzone/dist/dropzone.css";
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+figure.figure {
+  position: relative;
+}
+
+figure.figure .delete-image {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
