@@ -12,6 +12,7 @@
 <body>
     @yield('content')
 
+    <script src="/js/p5.min.js"></script>
     @stack('scripts')
 </body>
 </html>

@@ -2,6 +2,13 @@
 
 @section('above-fields')
     <div class="col-12">
+        <div class="float-right" id="links">
+            <h3>@lang('Helpful')</h3>
+            <ul>
+                <li><a href="https://www.htmling.net/" target="doc" title="HTMLling">Einführung in HTML und CSS</a></li>
+                <li><a href="https://wiki.selfhtml.org/" target="doc" title="SELFhtml">Nachschlagewert HTML / CSS / Javascript</a></li>
+            </ul>
+        </div>
         <div id="images" class="row"></div>
     </div>
 @endsection
