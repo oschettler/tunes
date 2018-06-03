@@ -24,4 +24,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('media/{media}/delete', 'MediaController@delete');
 });
 
-Route::get('/project/{project}', 'ProjectController@show')->name('project.show');
+Route::get('/{project}', 'ProjectController@show')->name('project.show');
