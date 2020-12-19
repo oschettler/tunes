@@ -16,9 +16,6 @@ Route::get('/', 'ProjectController@home')->name('home');
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('data', 'DataController')
-        ->except('show', 'update');
-
         Route::resource('project', 'ProjectController')
         ->except('show', 'home');
 
@@ -28,6 +25,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('media/{media}/delete', 'MediaController@delete');
 });
 
-Route::put('/data/{data}', 'DataController@update')->name('data.update');
-Route::get('/data/{data}', 'DataController@show')->name('data.show');
 Route::get('/{project}', 'ProjectController@show')->name('project.show');
