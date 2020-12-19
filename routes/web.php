@@ -26,3 +26,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/{project}', 'ProjectController@show')->name('project.show');
+Route::put('/message', 'MessageController@update');
