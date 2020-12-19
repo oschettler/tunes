@@ -55,7 +55,7 @@ class ProjectController extends Controller
                     ->with('error', 'Select a project and mark it as startpage');
             }
         }
-        return view('project.show', ['entity' => $project]);
+        return view(config('crud.theme') . '.project.show', ['entity' => $project]);
     }
 
     /**
@@ -102,7 +102,7 @@ class ProjectController extends Controller
             return redirect()->route('home');
         }
 
-        return view('project.show', ['entity' => $project]);
+        return view(config('crud.theme') . '.project.show', ['entity' => $project]);
     }
 
     /**

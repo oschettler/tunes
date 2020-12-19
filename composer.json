@@ -4,10 +4,20 @@
     "keywords": ["web editor"],
     "license": "GPL-3.0",
     "type": "project",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/knowfox/crud",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "require": {
         "php": "^7.1.3",
         "doctrine/dbal": "^2.7",
         "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "^7.2",
         "knowfox/crud": "dev-master",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
@@ -16,7 +26,6 @@
         "spatie/laravel-sluggable": "^2.1"
     },
     "require-dev": {
-        "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^2.0",

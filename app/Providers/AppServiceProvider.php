@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Project;
-use App\ProjectObserver;
+use App\Observers\ProjectObserver;
 use Illuminate\Support\ServiceProvider;
+use Knowfox\Crud\Models\Setting;
+use Knowfox\Crud\Models\ConfigSetting;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        app()->bind(Setting::class, ConfigSetting::class);
+        config(['crud.theme' => 'bootstrap4']);
     }
 }

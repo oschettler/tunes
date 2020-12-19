@@ -47,5 +47,25 @@ return [
                 'rows' => 10,
             ]
         ]
+    ],
+    'data' => [
+        'model' => \App\Data::class,
+        'entity_title' => [' Data', 'Data'],
+        'entity_name' => 'data',
+        'order_by' => 'updated_at|desc',
+        'deletes' => true,
+
+        'columns' => [
+            'name' => 'Name',
+            'updated_at' => 'Last changed',
+        ],
+
+        'fields' => [
+            'name' => 'Name',
+            'content' => [
+                'label' => 'Content',
+                'type' => 'textarea',
+            ],
+        ],
     ]
 ];

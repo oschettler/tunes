@@ -1,0 +1,3 @@
+[submodule "packages/knowfox/crud"]
+	path = packages/knowfox/crud
+	url = git@github.com:knowfox/crud.git
