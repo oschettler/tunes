@@ -17,7 +17,7 @@ require('codemirror/mode/htmlmixed/htmlmixed');
 
 Dropzone.options.dropzone = {
     previewsContainer: '.dropzone-previews',
-    acceptedFiles: 'image/*'
+    acceptedFiles: 'image/*,text/html'
 };
 
 /**
